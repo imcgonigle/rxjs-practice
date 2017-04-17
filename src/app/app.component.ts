@@ -23,7 +23,6 @@ import { AppService } from './app.service';
 })
 export class AppComponent {
   
-  private data: Observable<Array<number>>;
   private values: Array<number> = [];
   private anyErrors: boolean;
   private finished: boolean;
