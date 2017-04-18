@@ -14,6 +14,8 @@ export class AppComponent {
   private values: Array<number> = [];
   private anyErrors: boolean;
   private finished: boolean;
+  private messages: Array<string> = [];
+  private messagesFinished: boolean;
 
   constructor(
       private appService: AppService
@@ -21,7 +23,7 @@ export class AppComponent {
   
   init() {
       this.appService.getNumbers().subscribe(
-          value => this.values.push(Number(value)),
+          value => this.values.push(value),
           error => this.anyErrors = true,
           () => this.finished = true
       );
@@ -31,5 +33,11 @@ export class AppComponent {
       }).then(x => {
           console.log("Finished");
       });
+
+      this.appService.getMessages().subscribe(
+          value => this.messages.push(value),
+          error => this.anyErrors = true,
+          () => this.messagesFinished = true
+      );
   }
 }
