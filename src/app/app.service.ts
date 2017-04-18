@@ -24,4 +24,28 @@ export class AppService {
     })
   }
 
+  getMessages(): Observable<string>{
+    return new Observable(observer => {
+      setTimeout(() => {
+        observer.next("Hey what's up?");
+      }, 1000);
+
+      setTimeout(() => {
+        observer.next("What are you doing?");
+      }, 2000);
+
+      setTimeout(() => {
+        observer.next("Why are you here?");
+      }, 3000);
+
+      setTimeout(() => {
+        observer.next("Hi");
+      }, 500);
+
+      setTimeout(() => {
+        observer.complete();
+      }, 3000);
+    })
+  }
+
 }
