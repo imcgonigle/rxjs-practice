@@ -5,20 +5,8 @@ import { AppService } from './app.service';
 
 @Component({
 	selector: 'app-root',
-	template: `
-	  <b>Angular 2 Component Using Observables!</b>
-	 
-	  <h6 style="margin-bottom: 0">VALUES:</h6>
-	  <div *ngFor="let value of values">- {{ value }}</div>
-	  
-	  <h6 style="margin-bottom: 0">ERRORs:</h6>
-	  <div>Errors: {{anyErrors}}</div>
-	  
-	  <h6 style="margin-bottom: 0">FINISHED:</h6>
-	  <div>Finished: {{ finished }}</div>
-	  
-	  <button style="margin-top: 2rem;" (click)="init()">Init</button>
-	`,
+	templateUrl: 'app.component.html',
+    styleUrls: ['app.component.css'],
     providers: [ AppService ]
 })
 export class AppComponent {
@@ -37,5 +25,11 @@ export class AppComponent {
           error => this.anyErrors = true,
           () => this.finished = true
       );
+
+      this.appService.getNumbers().forEach( value => {
+          this.values.push(value)
+      }).then(x => {
+          console.log("Finished");
+      });
   }
 }
