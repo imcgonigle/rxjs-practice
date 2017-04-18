@@ -3,7 +3,10 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    border: 1px solid #fff;
+}
+
+.control-container {
+    text-align: center;
 }
 
 .number-container {
@@ -11,7 +14,7 @@
     width: 400px;
     min-height: 100vh;
     font-size: 1.5rem;
-    border: 2px solid #eee;
+    background: #223;
 }
 
 .number-container>h1 {
@@ -35,7 +38,7 @@
     padding: 2rem;
     width: 400px;
     min-height: 100vh;
-    border: 2px solid #eee;
+    background: #223;
 }
 
 .message-container>h1 {
@@ -55,7 +58,7 @@
 
 .status-container {
     height: 5rem;
-    width: 100%;
+    width: 300px;
     margin-top: 2rem;
 }
 
