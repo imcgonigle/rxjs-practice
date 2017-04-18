@@ -16,6 +16,7 @@ export class AppComponent {
   private messages: Array<string> = [];
   private messagesFinished: boolean;
   private anyErrors: boolean;
+  private running: boolean;
 
   constructor(
       private appService: AppService
@@ -23,18 +24,27 @@ export class AppComponent {
   
   startProgram() {
       this.messages = [];
+      this.messagesFinished = false;
       this.numbers = [];
+      this.numbersFinished = false;
+      this.running = true;
 
       this.appService.getNumbers().subscribe(
           value => this.numbers.push(value),
           error => this.anyErrors = true,
-          () => this.numbersFinished = true
+          () => {
+              this.numbersFinished = true;
+              this.running = this.messagesFinished ? false : true;
+          }
       );
 
       this.appService.getMessages().subscribe(
           value => this.messages.push(value),
           error => this.anyErrors = true,
-          () => this.messagesFinished = true
+          () => {
+              this.messagesFinished = true;
+              this.running = this.numbersFinished ? false : true;
+          }
       );
   }
 }
