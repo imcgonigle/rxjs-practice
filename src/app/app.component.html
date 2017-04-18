@@ -1,3 +1,14 @@
-<h1>
-  {{title}}
-</h1>
+<div class="container">
+    <b>Angular 2 Component Using Observables!</b>
+
+    <h6>VALUES:</h6>
+    <div *ngFor="let value of values">- {{ value }}</div>
+
+    <h6>ERRORs:</h6>
+    <div>Errors: {{anyErrors}}</div>
+
+    <h6>FINISHED:</h6>
+    <div>Finished: {{ finished }}</div>
+
+    <button clss="btn btn-primary" (click)="init()">Init</button>
+</div>
