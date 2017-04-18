@@ -7,7 +7,7 @@
         <button class="btn btn-primary btn-lg" (click)="init()">Start Program</button>
         <div class="status-container">
             <h3 class="text-danger" *ngIf="anyErrors">ERROR</h3>
-            <h3 class="text-success" *ngIf="finished">FINISHED</h3>
+            <h3 class="text-success" *ngIf="messagesFinished && numbersFinished">FINISHED</h3>
         </div>
     </div>
     <div class="message-container">
