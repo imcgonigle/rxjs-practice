@@ -28,7 +28,6 @@ export class AppComponent {
           () => this.numbersFinished = true
       );
 
-
       this.appService.getMessages().subscribe(
           value => this.messages.push(value),
           error => this.anyErrors = true,
