@@ -1,9 +1,66 @@
-* {
+.app-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #fff;
+}
+
+.number-container {
+    padding: 2rem;
+    width: 400px;
+    min-height: 100vh;
+    font-size: 1.5rem;
+    border: 2px solid #eee;
+}
+
+.number-container>h1 {
+    margin: 0;
+    padding: 0;
     margin-bottom: 3rem;
 }
 
-.container {
-    max-width: 700px;
-    margin: auto;
-    font-size: 1.5rem;
+.number {
+    display: inline-block;
+    padding: 2rem;
+    margin: 1rem;
+    font-size: 2rem;
+    font-weight: bold;
+    border-radius: 50%;
+    background: #eee;
+    color: #811;
+}
+
+.message-container {
+    padding: 2rem;
+    width: 400px;
+    min-height: 100vh;
+    border: 2px solid #eee;
+}
+
+.message-container>h1 {
+    margin: 0;
+    padding: 0;
+    margin-bottom: 3rem;
+}
+
+.message {
+    width: 60%;
+    padding: 1rem;
+    margin-bottom: 2rem;
+    border-radius: 5px;
+    background: #3d5;
+    color: #333;
+}
+
+.status-container {
+    height: 5rem;
+    width: 100%;
+    margin-top: 2rem;
+}
+
+.status-container>h3 {
+    margin: 0;
+    padding: 0;
+    text-align: center;
 }
