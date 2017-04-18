@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 @Injectable()
 export class AppService {
 
-  getNumbers(): Observable<Array<number>>{
+  getNumbers(): Observable<number>{
     return new Observable((observer) => {
       setTimeout(() => {
         observer.next(42);
