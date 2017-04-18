@@ -7,44 +7,58 @@ export class AppService {
   getNumbers(): Observable<number>{
     return new Observable((observer) => {
       setTimeout(() => {
-        observer.next(42);
-      }, 1000);
+        observer.next(Math.floor(Math.random() * 100));
+      }, Math.random() * 10000);
 
       setTimeout(() => {
-        observer.next(43);
-      }, 2000);
+        observer.next(Math.floor(Math.random() * 100));
+      }, Math.random() * 10000);
 
       setTimeout(() => {
-        observer.next(44);
-      }, 3000);
+        observer.next(Math.floor(Math.random() * 100));
+      }, Math.random() * 10000);
+
+      setTimeout(() => {
+        observer.next(Math.floor(Math.random() * 100));
+      }, Math.random() * 10000);
+
+      setTimeout(() => {
+        observer.next(Math.floor(Math.random() * 100));
+      }, Math.random() * 10000);
+
+      setTimeout(() => {
+        observer.next(Math.floor(Math.random() * 100));
+      }, Math.random() * 10000);
 
       setTimeout(() => {
         observer.complete();
-      }, 3000);
+      }, 10000);
     })
   }
 
   getMessages(): Observable<string>{
     return new Observable(observer => {
+
+      var time = 0;
       setTimeout(() => {
         observer.next("Hey what's up?");
-      }, 1000);
+      }, time += Math.random() * 2000);
 
       setTimeout(() => {
         observer.next("What are you doing?");
-      }, 2000);
+      }, time += Math.random() * 2000);
 
       setTimeout(() => {
         observer.next("Why are you here?");
-      }, 3000);
+      }, time += Math.random() * 2000);
 
       setTimeout(() => {
         observer.next("Hi");
-      }, 500);
+      }, time += Math.random() * 2000);
 
       setTimeout(() => {
         observer.complete();
-      }, 3000);
+      }, 5000);
     })
   }
 
