@@ -1,7 +1,7 @@
 <div class="app-container">
     <div class="number-container">
         <h1 class="text-center">Lucky Numbers</h1>
-        <div class="number" *ngFor="let number of numbers">{{ number }}</div>
+        <div class="number" *ngFor="let number of numbers">{{ number | number: '2.0-0'}}</div>
     </div>
     <div>
         <button class="btn btn-primary btn-lg" (click)="startProgram()">Start Program</button>
