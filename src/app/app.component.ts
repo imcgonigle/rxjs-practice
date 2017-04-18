@@ -13,7 +13,7 @@ export class AppComponent {
   
   private values: Array<number> = [];
   private anyErrors: boolean;
-  private finished: boolean;
+  private numbersFinished: boolean;
   private messages: Array<string> = [];
   private messagesFinished: boolean;
 
@@ -25,14 +25,9 @@ export class AppComponent {
       this.appService.getNumbers().subscribe(
           value => this.values.push(value),
           error => this.anyErrors = true,
-          () => this.finished = true
+          () => this.numbersFinished = true
       );
 
-      this.appService.getNumbers().forEach( value => {
-          this.values.push(value)
-      }).then(x => {
-          console.log("Finished");
-      });
 
       this.appService.getMessages().subscribe(
           value => this.messages.push(value),
