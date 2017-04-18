@@ -11,19 +11,22 @@ import { AppService } from './app.service';
 })
 export class AppComponent {
   
-  private values: Array<number> = [];
-  private anyErrors: boolean;
+  private numbers: Array<number> = [];
   private numbersFinished: boolean;
   private messages: Array<string> = [];
   private messagesFinished: boolean;
+  private anyErrors: boolean;
 
   constructor(
       private appService: AppService
   ) {}
   
-  init() {
+  startProgram() {
+      this.messages = [];
+      this.numbers = [];
+
       this.appService.getNumbers().subscribe(
-          value => this.values.push(value),
+          value => this.numbers.push(value),
           error => this.anyErrors = true,
           () => this.numbersFinished = true
       );
